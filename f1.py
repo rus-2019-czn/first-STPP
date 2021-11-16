@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 #run_with_ngrok(app)
 
-@app.route('/')
+@app.route('/first')
 def index():
     user = "Магзумов Руслан"
     return render_template('index.html', title='Домашняя страница', 
@@ -19,7 +19,7 @@ def news():
     return render_template('news.html', news=news_list, title = 'Новости')
 
 
-@app.route('/first_page')
+@app.route('/picture')
 def first():
     name = url_for('static', filename='img/picture.jpg')
     return render_template('picture.html', name=name)
@@ -82,7 +82,7 @@ def form_sample():
         print(request.form.get('about'))
         print(request.form.get('accept'))
         print(request.form.get('sex'))
-        return render_template('index.html', title='Домашняя страница', username=user <BR> "Форма отправлена")
+        return "Форма отправлена"
 
 
 if __name__ == '__main__':
