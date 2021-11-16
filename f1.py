@@ -30,33 +30,6 @@ def first():
     name = url_for('static', filename='img/picture.jpg')
     return render_template('picture.html', name=name)
 
-@app.route('/greeting/<username>')
-def greeting(username):
-    return f'''<!doctype html>
-                <html lang="en">
-                  <head>
-                    <meta charset="utf-8">
-                    <title>Привет, {username}</title>
-                  </head>
-                  <body>
-                    <h1>Привет, {username}!</h1>
-                  </body>
-                </html>'''
-
-@app.route('/getnumber/<int:number>')
-def get_number(number):
-    number += 1
-    return f'''<!doctype html>
-                <html lang="ru">
-                  <head>
-                    <meta charset="utf-8">
-                  </head>
-                  <body>
-                    <h1>Запрошено число {number}!</h1>
-                    Первая строка <BR>
-                    Вторая строка
-                  </body>
-                </html>'''
 
 @app.route('/form_sample', methods=['POST', 'GET'])
 def form_sample():
