@@ -8,21 +8,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    user = "Александр"
+    user = "Магзумов Руслан"
     return render_template('index.html', title='Домашняя страница', 
                            username=user)
-
-
-@app.route('/second/')
-def second():
-    numbers = [str(i) for i in range(10)]
-    return "<BR>".join(numbers)
 
 @app.route('/news')
 def news():
     with open("templates/news.json", "rt", encoding="utf8") as f:
         news_list = json.loads(f.read())
-    return render_template('news1.html', news=news_list, title = 'Новости')
+    return render_template('news.html', news=news_list, title = 'Новости')
 
 
 @app.route('/first_page')
@@ -88,7 +82,7 @@ def form_sample():
         print(request.form.get('about'))
         print(request.form.get('accept'))
         print(request.form.get('sex'))
-        return "Форма отправлена"
+        return render_template('index.html', title='Домашняя страница', username=user <BR> "Форма отправлена")
 
 
 if __name__ == '__main__':
