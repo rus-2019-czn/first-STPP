@@ -82,8 +82,9 @@ def form_sample():
         print(request.form.get('about'))
         print(request.form.get('accept'))
         print(request.form.get('sex'))
-        return "Форма отправлена"
-
+        send = "Спасибо. Вы прошли регистрацию"
+        return render_template('second.html', title='Вторая страница', username=send)
+        
 
 if __name__ == '__main__':
     #app.run(port=8080, host='127.0.0.1')
