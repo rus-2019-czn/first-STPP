@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 #run_with_ngrok(app)
 
-@app.route('/first')
+@app.route('/')
 def index():
     user = "Магзумов Руслан"
     return render_template('index.html', title='Домашняя страница', 
